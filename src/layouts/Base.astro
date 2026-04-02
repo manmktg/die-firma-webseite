@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+// CUSTOMIZE: Seitentitel und Meta-Description anpassen
+const {
+  title = 'die Firma — Premium Websites die verkaufen',
+  description = 'Hochpersonalisierte Websites mit GSAP-Animationen, PageSpeed 90+ und SEO von Anfang an. Fertig in 2 Wochen.',
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="cursor:none;">
+    <!-- Custom Cursor -->
+    <div id="cursor" aria-hidden="true"></div>
+
+    <slot />
+
+    <script>
+      import '../scripts/animations.ts';
+    </script>
+  </body>
+</html>

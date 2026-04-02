@@ -1,0 +1,173 @@
+---
+const leistungen = [
+  {
+    name: 'Website Standard',
+    preis: '1.200 €',
+    preisLabel: 'einmalig',
+    beschreibung: 'Professionelle Website die gefunden wird und konvertiert.',
+    features: [
+      'PageSpeed 90+ garantiert',
+      'SEO von Anfang an integriert',
+      'Fertig in 2 Wochen',
+      'Individuelles Design',
+      'Responsive für alle Geräte',
+    ],
+    highlight: false,
+    ctaText: 'Jetzt anfragen',
+  },
+  {
+    name: 'Website High-End',
+    preis: '3.999 €',
+    preisLabel: 'einmalig',
+    beschreibung: 'Premium Interactive Web. Scroll-Animationen, die im Gedächtnis bleiben.',
+    features: [
+      'Alles aus Standard',
+      'GSAP ScrollTrigger Animationen',
+      'Parallax & Word Reveal',
+      'Pinned Scroll Sections',
+      'Maximale visuelle Wirkung',
+    ],
+    highlight: true,
+    ctaText: 'High-End anfragen',
+  },
+  {
+    name: 'Automations',
+    preis: 'Auf Anfrage',
+    preisLabel: 'individuell',
+    beschreibung: 'Automatisiere dein Marketing — von E-Mail bis CRM. Skalierbar, plattformunabhängig.',
+    features: [
+      'E-Mail-Automation & Sequenzen',
+      'Analytics & Conversion-Tracking',
+      'Lead-Nurturing-Systeme',
+      'CRM-Integration & Workflows',
+    ],
+    highlight: false,
+    ctaText: 'Anfragen',
+  },
+];
+---
+
+<section id="leistungen" class="leistungen-section relative py-36 px-8 bg-brand-black overflow-visible">
+
+  <!-- Hintergrund Glow -->
+  <div class="absolute pointer-events-none" style="top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(16,178,173,0.04) 0%,transparent 70%);"></div>
+
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Header -->
+    <div class="mb-28">
+      <p class="font-body text-xs tracking-[0.3em] uppercase mb-5" style="color:#10b2ad;">
+        Leistungen & Preise
+      </p>
+      <h2 class="font-headline text-brand-white" style="font-size:clamp(2.5rem,6vw,5.5rem);line-height:1.05;">
+        Was wir bauen.
+      </h2>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" style="padding-top:1.5rem;">
+      {leistungen.map((item, idx) => (
+        <div
+          class={`leistung-card opacity-0 flex flex-col ${item.highlight ? 'featured' : ''}`}
+          style={`
+            position:relative;
+            overflow:visible;
+            border-radius:12px;
+            padding:2.5rem 2rem 2rem;
+            background:${item.highlight ? 'rgba(16,178,173,0.04)' : 'rgba(255,255,255,0.02)'};
+            border:1px solid ${item.highlight ? 'rgba(16,178,173,0.3)' : 'rgba(255,255,255,0.07)'};
+          `}
+          data-card-idx={idx}
+        >
+
+          <!-- Teal top accent for featured -->
+          {item.highlight && (
+            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#10b2ad,transparent);border-radius:12px 12px 0 0;pointer-events:none;"></div>
+          )}
+
+          <!-- Number badge — hangs above card -->
+          <div style={`
+            position:absolute;
+            top:-20px;
+            left:50%;
+            transform:translateX(-50%);
+            width:40px;
+            height:40px;
+            border-radius:50%;
+            border:1px solid ${item.highlight ? '#10b2ad' : 'rgba(16,178,173,0.35)'};
+            background:${item.highlight ? '#10b2ad' : '#000000'};
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-family:'Open Sans',sans-serif;
+            font-size:0.85rem;
+            font-weight:600;
+            color:${item.highlight ? '#000000' : '#10b2ad'};
+            z-index:2;
+          `}>
+            {idx + 1}
+          </div>
+
+          <!-- "Empfohlen" badge oder Platzhalter-Abstand -->
+          {item.highlight ? (
+            <div style="text-align:center;margin-bottom:1.25rem;margin-top:0.5rem;">
+              <span class="font-body font-semibold text-xs px-4 py-1 tracking-widest uppercase"
+                    style="background:#10b2ad;color:#000;letter-spacing:0.12em;">
+                Empfohlen
+              </span>
+            </div>
+          ) : (
+            <div style="height:2.25rem;"></div>
+          )}
+
+          <!-- Preis -->
+          <div style="text-align:center;margin-bottom:0.5rem;">
+            <p class={`font-headline ${item.highlight ? 'shimmer-text' : ''}`}
+               style={`font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1;${!item.highlight ? 'color:#ffffff;' : ''}`}>
+              {item.preis}
+            </p>
+            <p class="font-body text-xs mt-2 tracking-wider uppercase" style="color:rgba(255,255,255,0.3);">
+              {item.preisLabel}
+            </p>
+          </div>
+
+          <!-- Dotted separator -->
+          <div style="text-align:center;margin:1.5rem 0;color:rgba(16,178,173,0.25);letter-spacing:0.3em;font-size:0.65rem;user-select:none;">
+            · · · · · · · · · · · · · · ·
+          </div>
+
+          <!-- Name -->
+          <h3 class="font-headline text-brand-white mb-3 text-center" style="font-size:1.2rem;">
+            {item.name}
+          </h3>
+
+          <!-- Beschreibung -->
+          <p class="font-body text-sm mb-8 leading-relaxed text-center" style="color:#d1d1d1;">
+            {item.beschreibung}
+          </p>
+
+          <!-- Features -->
+          <ul class="space-y-3 mb-10 flex-grow">
+            {item.features.map((f) => (
+              <li class="flex items-start gap-3 font-body text-sm" style="color:rgba(255,255,255,0.65);">
+                <span class="flex-shrink-0 mt-0.5" style="color:#10b2ad;">→</span>
+                {f}
+              </li>
+            ))}
+          </ul>
+
+          <!-- CTA -->
+          <a
+            href="#kontakt"
+            class={item.highlight ? 'btn-pill-teal' : 'btn-pill-outline'}
+            style="width:100%;justify-content:center;"
+          >
+            {item.ctaText}
+          </a>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

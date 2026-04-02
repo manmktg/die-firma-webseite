@@ -1,0 +1,123 @@
+---
+const cases = [
+  {
+    name: 'Coaching Studio Müller',
+    branche: 'Business Coaching',
+    bild: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
+    metriken: [
+      { wert: 340, suffix: '%', label: 'mehr Traffic' },
+      { wert: 92, suffix: '', label: 'PageSpeed' },
+      { wert: 11, suffix: 'd', label: 'bis Live' },
+    ],
+    beschreibung: 'Von generischem WordPress-Theme zur High-End Präsenz mit Scroll-Animationen.',
+  },
+  {
+    name: 'Maier E-Commerce',
+    branche: 'Online-Handel',
+    bild: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80',
+    metriken: [
+      { wert: 58, suffix: '%', label: 'mehr Conversion' },
+      { wert: 95, suffix: '', label: 'PageSpeed' },
+      { wert: 14, suffix: 'd', label: 'bis Live' },
+    ],
+    beschreibung: 'Neue Landingpage für Hauptprodukt. Fokus auf Geschwindigkeit und klare Verkaufsstruktur.',
+  },
+  {
+    name: 'Beratergruppe Nord',
+    branche: 'Unternehmensberatung',
+    bild: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&q=80',
+    metriken: [
+      { wert: 210, suffix: '%', label: 'mehr Anfragen' },
+      { wert: 91, suffix: '', label: 'PageSpeed' },
+      { wert: 12, suffix: 'd', label: 'bis Live' },
+    ],
+    beschreibung: 'Positionierung als Premiumanbieter — mit E-Mail-Automation als Akquise-Maschine dahinter.',
+  },
+];
+---
+
+<section id="referenzen" class="referenzen-section relative bg-brand-black" style="padding:15vh 0; overflow:hidden;">
+
+  <!-- Section Header -->
+  <div class="max-w-6xl mx-auto px-8 mb-20">
+    <p class="font-body text-xs tracking-[0.3em] uppercase mb-5 ref-label opacity-0" style="color:#10b2ad;">
+      Referenzen
+    </p>
+    <h2 class="font-headline text-brand-white ref-headline opacity-0" style="font-size:clamp(2.5rem,6vw,5.5rem);line-height:1.05;">
+      Ergebnisse die zählen.
+    </h2>
+  </div>
+
+  <!-- Cases -->
+  {cases.map((c, i) => (
+    <div class="case-item" style={`margin-bottom:${i < cases.length - 1 ? '20vh' : '0'};`}>
+
+      <div style={`display:flex; align-items:center; flex-direction:${i % 2 === 0 ? 'row' : 'row-reverse'};`}>
+
+        <!-- Bild: 60% Breite -->
+        <div class="case-image-wrap" style="flex:0 0 60%; position:relative; overflow:hidden;">
+          <img
+            src={c.bild}
+            alt={c.name}
+            loading="lazy"
+            style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; transition:transform 0.8s ease;"
+          />
+          <!-- Overlay -->
+          <div style="position:absolute;inset:0;background:rgba(0,0,0,0.2);pointer-events:none;"></div>
+        </div>
+
+        <!-- Content: 40% Breite -->
+        <div style="flex:0 0 40%; padding:0 5rem; position:relative;">
+
+          <!-- Hintergrundnummer -->
+          <div class="font-headline"
+               style="position:absolute;font-size:clamp(7rem,11vw,11rem);line-height:1;color:rgba(255,255,255,0.04);top:50%;left:2.5rem;transform:translateY(-50%);pointer-events:none;user-select:none;z-index:0;">
+            {String(i + 1).padStart(2, '0')}
+          </div>
+
+          <div style="position:relative;z-index:1;">
+
+            <!-- Kategorie -->
+            <p class="case-cat font-body uppercase opacity-0"
+               style="letter-spacing:0.3em;font-size:11px;color:#10b2ad;margin-bottom:12px;">
+              {c.branche}
+            </p>
+
+            <!-- Projektname -->
+            <h3 class="case-name font-headline opacity-0"
+                style="font-size:clamp(1.75rem,3vw,2.75rem);color:#ffffff;line-height:1.1;margin-bottom:16px;">
+              {c.name}
+            </h3>
+
+            <!-- Beschreibung -->
+            <p class="case-desc font-body opacity-0"
+               style="font-size:16px;color:#d1d1d1;line-height:1.8;margin-bottom:48px;max-width:34ch;">
+              {c.beschreibung}
+            </p>
+
+            <!-- Metriken — vertikal gestapelt -->
+            <div class="case-metrics opacity-0">
+              {c.metriken.map((m, mi) => (
+                <div style={mi < c.metriken.length - 1 ? 'margin-bottom:32px;' : ''}>
+                  <p class="font-headline referenz-metrik"
+                     data-count={m.wert}
+                     data-suffix={m.suffix}
+                     style="font-size:3.5rem;color:#ffffff;line-height:1;">
+                    0{m.suffix}
+                  </p>
+                  <p class="font-body uppercase"
+                     style="font-size:11px;color:#10b2ad;letter-spacing:0.2em;margin-top:6px;">
+                    {m.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  ))}
+
+</section>

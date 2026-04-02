@@ -1,0 +1,158 @@
+---
+---
+
+<section id="kontakt" class="cta-section relative bg-brand-black overflow-hidden"
+         style="min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:15vh 2rem;">
+
+  <!-- Subtiler radialer Teal-Glow -->
+  <div class="absolute pointer-events-none inset-0"
+       style="background:radial-gradient(ellipse 60% 40% at 50% 50%,rgba(16,178,173,0.06) 0%,transparent 70%);">
+  </div>
+
+  <div class="max-w-6xl mx-auto w-full relative z-10">
+
+    <div class="cta-inner grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+
+      <!-- Links: Headline + Subtext + E-Mail -->
+      <div class="cta-text-col opacity-0">
+
+        <p class="font-body text-xs tracking-[0.3em] uppercase mb-8" style="color:#10b2ad;">
+          Projekt starten
+        </p>
+
+        <h2 class="font-headline leading-tight mb-8" style="font-size:clamp(2.75rem,5.5vw,5.5rem);">
+          <span style="color:#ffffff;font-weight:400;">Bereit für eine<br/>Website die wirklich</span><br/>
+          <span style="color:#10b2ad;">arbeitet?</span>
+        </h2>
+
+        <p class="font-body leading-relaxed mb-10" style="color:rgba(255,255,255,0.55);font-size:1rem;max-width:36rem;">
+          Kein Angebots-Dschungel. Keine versteckten Kosten.<br/>
+          Schreib uns — wir melden uns innerhalb von 24 Stunden.
+        </p>
+
+        <a href="mailto:hallo@die-firma.de" class="cta-email-link font-body">
+          hallo@die-firma.de
+        </a>
+
+      </div>
+
+      <!-- Rechts: Formular -->
+      <div class="cta-form-col opacity-0">
+
+        <form method="POST" action="/api/contact" id="kontakt-formular">
+
+          <!-- Vorname + Nachname nebeneinander -->
+          <div style="display:flex; gap:48px;">
+            <input
+              type="text"
+              name="vorname"
+              required
+              autocomplete="given-name"
+              class="input-underline"
+              placeholder="Vorname"
+              style="flex:1;"
+            />
+            <input
+              type="text"
+              name="nachname"
+              required
+              autocomplete="family-name"
+              class="input-underline"
+              placeholder="Nachname"
+              style="flex:1;"
+            />
+          </div>
+
+          <!-- E-Mail -->
+          <div style="margin-top:40px;">
+            <input
+              type="email"
+              name="email"
+              required
+              autocomplete="email"
+              class="input-underline"
+              placeholder="E-Mail-Adresse"
+            />
+          </div>
+
+          <!-- Honeypot -->
+          <div class="hidden" aria-hidden="true">
+            <input type="text" name="_honeypot" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <!-- Submit -->
+          <div style="margin-top:48px;">
+            <button type="submit" id="submit-btn" class="cta-submit-btn">
+              Projekt starten →
+            </button>
+          </div>
+
+          <!-- Trust-Metriken — eine Zeile -->
+          <p class="font-body" style="font-size:12px;color:#444444;text-align:center;margin-top:24px;">
+            2 Wo. Lieferzeit · 90+ PageSpeed · 24h Antwortzeit
+          </p>
+
+          <!-- Feedback -->
+          <div id="form-feedback" class="hidden font-body text-sm" style="margin-top:12px;"></div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-24 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+         style="border-top:1px solid rgba(255,255,255,0.06);">
+      <img
+        src="/assets/logo.webp"
+        alt="die Firma"
+        class="h-6 w-auto"
+        style="filter:invert(1);opacity:0.3;"
+      />
+      <p class="font-body text-xs" style="color:rgba(255,255,255,0.25);">
+        © 2026 die Firma — Manuel Schrenker
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('kontakt-formular') as HTMLFormElement;
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const feedback = document.getElementById('form-feedback') as HTMLDivElement;
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'Wird gesendet…';
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          body: new FormData(form),
+        });
+
+        if (res.ok) {
+          feedback.textContent = '✓ Danke — wir melden uns innerhalb von 24 Stunden.';
+          feedback.className = 'font-body text-sm';
+          feedback.style.color = '#10b2ad';
+          form.reset();
+          btn.textContent = '✓ Gesendet';
+        } else {
+          throw new Error();
+        }
+      } catch {
+        feedback.textContent = 'Fehler beim Senden. Bitte schreib direkt an hallo@die-firma.de';
+        feedback.className = 'font-body text-sm';
+        feedback.style.color = '#f87171';
+        btn.disabled = false;
+        btn.textContent = 'Erneut versuchen';
+      }
+
+      feedback.classList.remove('hidden');
+    });
+  }
+</script>
