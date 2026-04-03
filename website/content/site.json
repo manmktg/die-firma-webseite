@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "cta": "Test test"
+  },
+  "hero": {
+    "headline_line1": "",
+    "headline_line2": "",
+    "subline": ""
+  },
+  "manifesto": {
+    "text_1": "",
+    "text_2": ""
+  },
+  "leistungen": [],
+  "prozess": [],
+  "referenzen": [],
+  "cta": {
+    "headline_1": "",
+    "headline_2": "",
+    "subtext": "",
+    "button": "",
+    "email": ""
+  },
+  "footer": {
+    "copyright": ""
+  }
+}
