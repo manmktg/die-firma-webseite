@@ -5,7 +5,9 @@
   "hero": {
     "headline_line1": "Hallo Markus",
     "headline_line2": "wie geht es dir?",
-    "subline": "Schöne Grüße aus Bangkok"
+    "subline": "Schöne Grüße aus Bangkok",
+    "btn_primary": "Projekt anfragen",
+    "btn_secondary": "Leistungen ansehen"
   },
   "manifesto": {
     "text_1": "Klappt easy peasy über Vercel, Github und Cloudflare. Einrichtung in vlt. 30 minuten",

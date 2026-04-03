@@ -29,6 +29,8 @@ collections:
               - {label: "Headline Zeile 1", name: headline_line1, widget: string, required: false}
               - {label: "Headline Zeile 2", name: headline_line2, widget: string, required: false}
               - {label: "Subline", name: subline, widget: text, required: false}
+              - {label: "Button Primär", name: btn_primary, widget: string, required: false}
+              - {label: "Button Sekundär", name: btn_secondary, widget: string, required: false}
 
           - label: Manifesto
             name: manifesto
