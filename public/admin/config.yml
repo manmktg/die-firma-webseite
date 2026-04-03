@@ -1,0 +1,84 @@
+backend:
+  name: github
+  repo: manmktg/die-firma-webseite
+  branch: main
+  base_url: https://sveltia-cms-auth.pages.dev
+
+locale: de
+media_folder: public/reference
+public_folder: /reference
+
+collections:
+  - name: site
+    label: Website-Inhalte
+    files:
+      - name: texte
+        label: Alle Texte bearbeiten
+        file: website/content/site.json
+        fields:
+          - label: Navigation
+            name: nav
+            widget: object
+            fields:
+              - {label: "CTA Button", name: cta, widget: string}
+
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - {label: "Headline Zeile 1", name: headline_line1, widget: string}
+              - {label: "Headline Zeile 2", name: headline_line2, widget: string}
+              - {label: "Subline", name: subline, widget: text}
+
+          - label: Manifesto
+            name: manifesto
+            widget: object
+            fields:
+              - {label: "Text 1", name: text_1, widget: text}
+              - {label: "Text 2", name: text_2, widget: text}
+
+          - label: Leistungen
+            name: leistungen
+            widget: list
+            fields:
+              - {label: "Titel", name: titel, widget: string}
+              - {label: "Beschreibung", name: beschreibung, widget: text}
+              - {label: "Preis", name: preis, widget: string}
+
+          - label: Prozess
+            name: prozess
+            widget: list
+            fields:
+              - {label: "Nummer", name: nummer, widget: string}
+              - {label: "Titel", name: titel, widget: string}
+              - {label: "Text", name: text, widget: text}
+
+          - label: Referenzen
+            name: referenzen
+            widget: list
+            fields:
+              - {label: "Kategorie", name: kategorie, widget: string}
+              - {label: "Projektname", name: projektname, widget: string}
+              - {label: "Beschreibung", name: beschreibung, widget: text}
+              - {label: "Metrik 1 Zahl", name: metrik_1_zahl, widget: string}
+              - {label: "Metrik 1 Label", name: metrik_1_label, widget: string}
+              - {label: "Metrik 2 Zahl", name: metrik_2_zahl, widget: string}
+              - {label: "Metrik 2 Label", name: metrik_2_label, widget: string}
+              - {label: "Metrik 3 Zahl", name: metrik_3_zahl, widget: string}
+              - {label: "Metrik 3 Label", name: metrik_3_label, widget: string}
+
+          - label: CTA
+            name: cta
+            widget: object
+            fields:
+              - {label: "Headline 1", name: headline_1, widget: string}
+              - {label: "Headline 2", name: headline_2, widget: string}
+              - {label: "Subtext", name: subtext, widget: text}
+              - {label: "Button Text", name: button, widget: string}
+              - {label: "E-Mail", name: email, widget: string}
+
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - {label: "Copyright", name: copyright, widget: string}

@@ -1,10 +1,9 @@
 ---
-const leistungen = [
+import site from '../../content/site.json'
+
+const staticData = [
   {
-    name: 'Website Standard',
-    preis: '1.200 €',
     preisLabel: 'einmalig',
-    beschreibung: 'Professionelle Website die gefunden wird und konvertiert.',
     features: [
       'PageSpeed 90+ garantiert',
       'SEO von Anfang an integriert',
@@ -16,10 +15,7 @@ const leistungen = [
     ctaText: 'Jetzt anfragen',
   },
   {
-    name: 'Website High-End',
-    preis: '3.999 €',
     preisLabel: 'einmalig',
-    beschreibung: 'Premium Interactive Web. Scroll-Animationen, die im Gedächtnis bleiben.',
     features: [
       'Alles aus Standard',
       'GSAP ScrollTrigger Animationen',
@@ -31,10 +27,7 @@ const leistungen = [
     ctaText: 'High-End anfragen',
   },
   {
-    name: 'Automations',
-    preis: 'Auf Anfrage',
     preisLabel: 'individuell',
-    beschreibung: 'Automatisiere dein Marketing — von E-Mail bis CRM. Skalierbar, plattformunabhängig.',
     features: [
       'E-Mail-Automation & Sequenzen',
       'Analytics & Conversion-Tracking',
@@ -44,7 +37,14 @@ const leistungen = [
     highlight: false,
     ctaText: 'Anfragen',
   },
-];
+]
+
+const leistungen = site.leistungen.map((item, i) => ({
+  name: item.titel,
+  preis: item.preis,
+  beschreibung: item.beschreibung,
+  ...staticData[i],
+}))
 ---
 
 <section id="leistungen" class="leistungen-section relative py-36 px-8 bg-brand-black overflow-visible">

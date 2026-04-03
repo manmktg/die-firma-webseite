@@ -1,7 +1,7 @@
 ---
-// CUSTOMIZE: Manifesto-Text — Positionierung in 1-3 kurzen Sätzen
-const manifestoText = `Agenturen liefern zu spät. Baukästen sehen aus wie Baukästen. Wir bauen Websites die auffallen — mit echtem Design, echtem SEO und echter Geschwindigkeit.`;
-const words = manifestoText.split(' ');
+import site from '../../content/site.json'
+const fullText = [site.manifesto.text_1, site.manifesto.text_2].filter(Boolean).join(' ')
+const words = fullText.split(' ');
 ---
 
 <section class="manifesto-section relative bg-brand-black overflow-hidden"

@@ -1,4 +1,6 @@
 ---
+import site from '../../content/site.json'
+const { hero } = site
 ---
 
 <section class="relative flex flex-col items-center justify-center overflow-hidden bg-brand-black"
@@ -27,16 +29,14 @@
     <!-- Headline -->
     <h1 class="hero-headline font-headline text-brand-white opacity-0"
         style="font-size:clamp(3rem,8vw,7.5rem);line-height:1.08;letter-spacing:-0.01em;margin-bottom:1.75rem;">
-      <!-- CUSTOMIZE: Haupt-Headline -->
-      Websites die<br/>
-      <span class="shimmer-text">verkaufen.</span>
+      {hero.headline_line1}<br/>
+      <span class="shimmer-text">{hero.headline_line2}</span>
     </h1>
 
     <!-- Subline -->
     <p class="hero-subline font-body opacity-0 font-light"
        style="font-size:1.1rem;color:#d1d1d1;max-width:38rem;margin:0 auto 3.5rem;line-height:1.75;">
-      <!-- CUSTOMIZE: Subline -->
-      Fertig in 2 Wochen. PageSpeed 90+. Kein Baukasten. Kein Agentur-Overhead.
+      {hero.subline}
     </p>
 
     <!-- CTAs -->

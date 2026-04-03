@@ -1,27 +1,10 @@
 ---
-// CUSTOMIZE: Prozess-Schritte
-const schritte = [
-  {
-    nummer: '01',
-    titel: 'Brief',
-    beschreibung: 'Wir klären Ziel, Zielgruppe und Stil. Kein langer Onboarding-Prozess — nur die Infos die zählen.',
-  },
-  {
-    nummer: '02',
-    titel: 'Design',
-    beschreibung: 'Innerhalb von 3 Tagen liegt ein vollständiger Design-Entwurf vor. Ein Feedback-Loop — dann Entwicklung.',
-  },
-  {
-    nummer: '03',
-    titel: 'Entwicklung',
-    beschreibung: 'Astro, Tailwind, GSAP. Sauber gebaut, schnell geladen. Live-Vorschau auf Staging-URL inklusive.',
-  },
-  {
-    nummer: '04',
-    titel: 'Live',
-    beschreibung: 'Übergabe mit Domain-Setup, Vercel-Deployment und SEO-Check. Fertig in 2 Wochen ab Brief.',
-  },
-];
+import site from '../../content/site.json'
+const schritte = site.prozess.map(s => ({
+  nummer: s.nummer,
+  titel: s.titel,
+  beschreibung: s.text,
+}))
 ---
 
 <!-- SVG Ink Filter — einmalig, unsichtbar -->

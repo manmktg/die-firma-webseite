@@ -1,4 +1,7 @@
 ---
+import site from '../../content/site.json'
+const { cta, footer } = site
+const subtextLines = cta.subtext.split('\n')
 ---
 
 <section id="kontakt" class="cta-section relative bg-brand-black overflow-hidden"
@@ -21,17 +24,21 @@
         </p>
 
         <h2 class="font-headline leading-tight mb-8" style="font-size:clamp(2.75rem,5.5vw,5.5rem);">
-          <span style="color:#ffffff;font-weight:400;">Bereit für eine<br/>Website die wirklich</span><br/>
-          <span style="color:#10b2ad;">arbeitet?</span>
+          <span style="color:#ffffff;font-weight:400;">{cta.headline_1}</span><br/>
+          <span style="color:#10b2ad;">{cta.headline_2}</span>
         </h2>
 
         <p class="font-body leading-relaxed mb-10" style="color:rgba(255,255,255,0.55);font-size:1rem;max-width:36rem;">
-          Kein Angebots-Dschungel. Keine versteckten Kosten.<br/>
-          Schreib uns — wir melden uns innerhalb von 24 Stunden.
+          {subtextLines.map((line, i) => (
+            <>
+              {line}
+              {i < subtextLines.length - 1 && <br/>}
+            </>
+          ))}
         </p>
 
-        <a href="mailto:hallo@die-firma.de" class="cta-email-link font-body">
-          hallo@die-firma.de
+        <a href={`mailto:${cta.email}`} class="cta-email-link font-body">
+          {cta.email}
         </a>
 
       </div>
@@ -83,7 +90,7 @@
           <!-- Submit -->
           <div style="margin-top:48px;">
             <button type="submit" id="submit-btn" class="cta-submit-btn">
-              Projekt starten →
+              {cta.button}
             </button>
           </div>
 
@@ -111,7 +118,7 @@
         style="filter:invert(1);opacity:0.3;"
       />
       <p class="font-body text-xs" style="color:rgba(255,255,255,0.25);">
-        © 2026 die Firma — Manuel Schrenker
+        {footer.copyright}
       </p>
     </div>
 

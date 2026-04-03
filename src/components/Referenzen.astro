@@ -1,39 +1,28 @@
 ---
-const cases = [
-  {
-    name: 'Coaching Studio Müller',
-    branche: 'Business Coaching',
-    bild: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
-    metriken: [
-      { wert: 340, suffix: '%', label: 'mehr Traffic' },
-      { wert: 92, suffix: '', label: 'PageSpeed' },
-      { wert: 11, suffix: 'd', label: 'bis Live' },
-    ],
-    beschreibung: 'Von generischem WordPress-Theme zur High-End Präsenz mit Scroll-Animationen.',
-  },
-  {
-    name: 'Maier E-Commerce',
-    branche: 'Online-Handel',
-    bild: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80',
-    metriken: [
-      { wert: 58, suffix: '%', label: 'mehr Conversion' },
-      { wert: 95, suffix: '', label: 'PageSpeed' },
-      { wert: 14, suffix: 'd', label: 'bis Live' },
-    ],
-    beschreibung: 'Neue Landingpage für Hauptprodukt. Fokus auf Geschwindigkeit und klare Verkaufsstruktur.',
-  },
-  {
-    name: 'Beratergruppe Nord',
-    branche: 'Unternehmensberatung',
-    bild: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&q=80',
-    metriken: [
-      { wert: 210, suffix: '%', label: 'mehr Anfragen' },
-      { wert: 91, suffix: '', label: 'PageSpeed' },
-      { wert: 12, suffix: 'd', label: 'bis Live' },
-    ],
-    beschreibung: 'Positionierung als Premiumanbieter — mit E-Mail-Automation als Akquise-Maschine dahinter.',
-  },
-];
+import site from '../../content/site.json'
+
+const bilder = [
+  'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
+  'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80',
+  'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&q=80',
+]
+
+function parseMetrik(zahl: string, label: string) {
+  const match = zahl.match(/^(\d+)(.*)$/)
+  return { wert: match ? parseInt(match[1]) : 0, suffix: match ? match[2] : '', label }
+}
+
+const cases = site.referenzen.map((r, i) => ({
+  name: r.projektname,
+  branche: r.kategorie,
+  bild: bilder[i] ?? bilder[0],
+  beschreibung: r.beschreibung,
+  metriken: [
+    parseMetrik(r.metrik_1_zahl, r.metrik_1_label),
+    parseMetrik(r.metrik_2_zahl, r.metrik_2_label),
+    parseMetrik(r.metrik_3_zahl, r.metrik_3_label),
+  ],
+}))
 ---
 
 <section id="referenzen" class="referenzen-section relative bg-brand-black" style="padding:15vh 0; overflow:hidden;">

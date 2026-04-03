@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "cta": "Projekt anfragen"
+  },
+  "hero": {
+    "headline_line1": "Websites die",
+    "headline_line2": "verkaufen.",
+    "subline": "Fertig in 2 Wochen. PageSpeed 90+. Kein Baukasten. Kein Agentur-Overhead."
+  },
+  "manifesto": {
+    "text_1": "Agenturen liefern zu spät. Baukästen sehen aus wie Baukästen. Wir bauen Websites die auffallen — mit echtem Design, echtem SEO und echter Geschwindigkeit.",
+    "text_2": ""
+  },
+  "leistungen": [
+    {
+      "titel": "Website Standard",
+      "beschreibung": "Professionelle Website die gefunden wird und konvertiert.",
+      "preis": "1.200 €"
+    },
+    {
+      "titel": "Website High-End",
+      "beschreibung": "Premium Interactive Web. Scroll-Animationen, die im Gedächtnis bleiben.",
+      "preis": "3.999 €"
+    },
+    {
+      "titel": "Automations",
+      "beschreibung": "Automatisiere dein Marketing — von E-Mail bis CRM. Skalierbar, plattformunabhängig.",
+      "preis": "Auf Anfrage"
+    }
+  ],
+  "prozess": [
+    {
+      "nummer": "01",
+      "titel": "Brief",
+      "text": "Wir klären Ziel, Zielgruppe und Stil. Kein langer Onboarding-Prozess — nur die Infos die zählen."
+    },
+    {
+      "nummer": "02",
+      "titel": "Design",
+      "text": "Innerhalb von 3 Tagen liegt ein vollständiger Design-Entwurf vor. Ein Feedback-Loop — dann Entwicklung."
+    },
+    {
+      "nummer": "03",
+      "titel": "Entwicklung",
+      "text": "Astro, Tailwind, GSAP. Sauber gebaut, schnell geladen. Live-Vorschau auf Staging-URL inklusive."
+    },
+    {
+      "nummer": "04",
+      "titel": "Live",
+      "text": "Übergabe mit Domain-Setup, Vercel-Deployment und SEO-Check. Fertig in 2 Wochen ab Brief."
+    }
+  ],
+  "referenzen": [
+    {
+      "kategorie": "Business Coaching",
+      "projektname": "Coaching Studio Müller",
+      "beschreibung": "Von generischem WordPress-Theme zur High-End Präsenz mit Scroll-Animationen.",
+      "metrik_1_zahl": "340%",
+      "metrik_1_label": "mehr Traffic",
+      "metrik_2_zahl": "92",
+      "metrik_2_label": "PageSpeed",
+      "metrik_3_zahl": "11d",
+      "metrik_3_label": "bis Live"
+    },
+    {
+      "kategorie": "Online-Handel",
+      "projektname": "Maier E-Commerce",
+      "beschreibung": "Neue Landingpage für Hauptprodukt. Fokus auf Geschwindigkeit und klare Verkaufsstruktur.",
+      "metrik_1_zahl": "58%",
+      "metrik_1_label": "mehr Conversion",
+      "metrik_2_zahl": "95",
+      "metrik_2_label": "PageSpeed",
+      "metrik_3_zahl": "14d",
+      "metrik_3_label": "bis Live"
+    },
+    {
+      "kategorie": "Unternehmensberatung",
+      "projektname": "Beratergruppe Nord",
+      "beschreibung": "Positionierung als Premiumanbieter — mit E-Mail-Automation als Akquise-Maschine dahinter.",
+      "metrik_1_zahl": "210%",
+      "metrik_1_label": "mehr Anfragen",
+      "metrik_2_zahl": "91",
+      "metrik_2_label": "PageSpeed",
+      "metrik_3_zahl": "12d",
+      "metrik_3_label": "bis Live"
+    }
+  ],
+  "cta": {
+    "headline_1": "Bereit für eine Website die wirklich",
+    "headline_2": "arbeitet?",
+    "subtext": "Kein Angebots-Dschungel. Keine versteckten Kosten.\nSchreib uns — wir melden uns innerhalb von 24 Stunden.",
+    "button": "Projekt starten →",
+    "email": "hallo@die-firma.de"
+  },
+  "footer": {
+    "copyright": "© 2026 die Firma — Manuel Schrenker"
+  }
+}
