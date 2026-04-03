@@ -20,65 +20,68 @@ collections:
             name: nav
             widget: object
             fields:
-              - {label: "CTA Button", name: cta, widget: string}
+              - {label: "CTA Button", name: cta, widget: string, required: false}
 
           - label: Hero
             name: hero
             widget: object
             fields:
-              - {label: "Headline Zeile 1", name: headline_line1, widget: string}
-              - {label: "Headline Zeile 2", name: headline_line2, widget: string}
-              - {label: "Subline", name: subline, widget: text}
+              - {label: "Headline Zeile 1", name: headline_line1, widget: string, required: false}
+              - {label: "Headline Zeile 2", name: headline_line2, widget: string, required: false}
+              - {label: "Subline", name: subline, widget: text, required: false}
 
           - label: Manifesto
             name: manifesto
             widget: object
             fields:
-              - {label: "Text 1", name: text_1, widget: text}
-              - {label: "Text 2", name: text_2, widget: text}
+              - {label: "Text 1", name: text_1, widget: text, required: false}
+              - {label: "Text 2", name: text_2, widget: text, required: false}
 
           - label: Leistungen
             name: leistungen
             widget: list
+            required: false
             fields:
-              - {label: "Titel", name: titel, widget: string}
-              - {label: "Beschreibung", name: beschreibung, widget: text}
-              - {label: "Preis", name: preis, widget: string}
+              - {label: "Titel", name: titel, widget: string, required: false}
+              - {label: "Beschreibung", name: beschreibung, widget: text, required: false}
+              - {label: "Preis", name: preis, widget: string, required: false}
 
           - label: Prozess
             name: prozess
             widget: list
+            required: false
             fields:
-              - {label: "Nummer", name: nummer, widget: string}
-              - {label: "Titel", name: titel, widget: string}
-              - {label: "Text", name: text, widget: text}
+              - {label: "Nummer", name: nummer, widget: string, required: false}
+              - {label: "Titel", name: titel, widget: string, required: false}
+              - {label: "Text", name: text, widget: text, required: false}
 
           - label: Referenzen
             name: referenzen
             widget: list
+            required: false
             fields:
-              - {label: "Kategorie", name: kategorie, widget: string}
-              - {label: "Projektname", name: projektname, widget: string}
-              - {label: "Beschreibung", name: beschreibung, widget: text}
-              - {label: "Metrik 1 Zahl", name: metrik_1_zahl, widget: string}
-              - {label: "Metrik 1 Label", name: metrik_1_label, widget: string}
-              - {label: "Metrik 2 Zahl", name: metrik_2_zahl, widget: string}
-              - {label: "Metrik 2 Label", name: metrik_2_label, widget: string}
-              - {label: "Metrik 3 Zahl", name: metrik_3_zahl, widget: string}
-              - {label: "Metrik 3 Label", name: metrik_3_label, widget: string}
+              - {label: "Kategorie", name: kategorie, widget: string, required: false}
+              - {label: "Projektname", name: projektname, widget: string, required: false}
+              - {label: "Beschreibung", name: beschreibung, widget: text, required: false}
+              - {label: "Metrik 1 Zahl", name: metrik_1_zahl, widget: string, required: false}
+              - {label: "Metrik 1 Label", name: metrik_1_label, widget: string, required: false}
+              - {label: "Metrik 2 Zahl", name: metrik_2_zahl, widget: string, required: false}
+              - {label: "Metrik 2 Label", name: metrik_2_label, widget: string, required: false}
+              - {label: "Metrik 3 Zahl", name: metrik_3_zahl, widget: string, required: false}
+              - {label: "Metrik 3 Label", name: metrik_3_label, widget: string, required: false}
 
           - label: CTA
             name: cta
             widget: object
             fields:
-              - {label: "Headline 1", name: headline_1, widget: string}
-              - {label: "Headline 2", name: headline_2, widget: string}
-              - {label: "Subtext", name: subtext, widget: text}
-              - {label: "Button Text", name: button, widget: string}
-              - {label: "E-Mail", name: email, widget: string}
+              - {label: "Headline 1", name: headline_1, widget: string, required: false}
+              - {label: "Headline 2", name: headline_2, widget: string, required: false}
+              - {label: "Subtext", name: subtext, widget: text, required: false}
+              - {label: "Button Text", name: button, widget: string, required: false}
+              - {label: "E-Mail", name: email, widget: string, required: false}
 
           - label: Footer
             name: footer
             widget: object
             fields:
-              - {label: "Copyright", name: copyright, widget: string}
+              - {label: "Copyright", name: copyright, widget: string, required: false}
