@@ -1,14 +1,14 @@
 {
   "nav": {
-    "cta": "Projekt anfragen"
+    "cta": "Anfragen"
   },
   "hero": {
-    "headline_line1": "Websites die",
-    "headline_line2": "verkaufen.",
-    "subline": "Fertig in 2 Wochen. PageSpeed 90+. Kein Baukasten. Kein Agentur-Overhead."
+    "headline_line1": "Hallo Markus",
+    "headline_line2": "wie geht es dir?",
+    "subline": "Schöne Grüße aus Bangkok"
   },
   "manifesto": {
-    "text_1": "Agenturen liefern zu spät. Baukästen sehen aus wie Baukästen. Wir bauen Websites die auffallen — mit echtem Design, echtem SEO und echter Geschwindigkeit.",
+    "text_1": "Klappt easy peasy über Vercel, Github und Cloudflare. Einrichtung in vlt. 30 minuten",
     "text_2": ""
   },
   "leistungen": [
