@@ -14,7 +14,7 @@ collections:
     files:
       - name: texte
         label: Alle Texte bearbeiten
-        file: website/content/site.json
+        file: content/site.json
         fields:
           - label: Navigation
             name: nav
