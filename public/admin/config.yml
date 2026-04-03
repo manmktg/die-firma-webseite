@@ -2,7 +2,7 @@ backend:
   name: github
   repo: manmktg/die-firma-webseite
   branch: main
-  base_url: https://sveltia-cms-auth.pages.dev
+  base_url: https://die-firma-cms-auth.manuel-schrenker-mktg.workers.dev
 
 locale: de
 media_folder: public/reference
